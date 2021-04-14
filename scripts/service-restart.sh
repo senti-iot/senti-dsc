@@ -2,8 +2,8 @@
 # chmod 700 api-restart.sh
 
 if [[ "$1" == "master" ]]; then
-	npm install --prefix /srv/nodejs/senti/services/gateway/production
-	systemctl restart senti-gateway.service
+	npm install --prefix /srv/nodejs/senti/services/dsc/production
+	systemctl restart senti-dsc.service
 	# Senti Slack Workspace
 	curl -X POST -H 'Content-type: application/json' --data '{
 	"blocks": [
@@ -11,7 +11,7 @@ if [[ "$1" == "master" ]]; then
 			"type": "header",
 			"text": {
 				"type": "plain_text",
-				"text": "Senti Gateway updated",
+				"text": "Senti Dsc updated",
 				"emoji": true
 			}
 		},
@@ -29,7 +29,7 @@ if [[ "$1" == "master" ]]; then
 					"emoji": true
 				},
 				"value": "travis-link",
-				"url": "http://travis-ci.com/github/senti-iot/senti-gateway",
+				"url": "http://travis-ci.com/github/senti-iot/senti-dsc",
 				"action_id": "button-action"
 			}
 		}
@@ -40,8 +40,8 @@ if [[ "$1" == "master" ]]; then
 fi
 
 if [[ "$1" == "dev" ]]; then
-	npm install --prefix /srv/nodejs/senti/services/gateway/development
-	systemctl restart senti-gateway-dev.service
+	npm install --prefix /srv/nodejs/senti/services/dsc/development
+	systemctl restart senti-dsc-dev.service
 	# Senti Slack Workspace
 	curl -X POST -H 'Content-type: application/json' --data '{
 	"blocks": [
@@ -49,7 +49,7 @@ if [[ "$1" == "dev" ]]; then
 			"type": "header",
 			"text": {
 				"type": "plain_text",
-				"text": "Senti Gateway updated",
+				"text": "Senti Dsc updated",
 				"emoji": true
 			}
 		},
@@ -67,7 +67,7 @@ if [[ "$1" == "dev" ]]; then
 					"emoji": true
 				},
 				"value": "travis-link",
-				"url": "http://travis-ci.com/github/senti-iot/senti-gateway",
+				"url": "http://travis-ci.com/github/senti-iot/senti-dsc",
 				"action_id": "button-action"
 			}
 		}
