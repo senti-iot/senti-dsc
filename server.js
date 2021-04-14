@@ -1,5 +1,5 @@
 #!/usr/bin/env nodejs
-process.title = "senti_dsc_dev"
+process.title = "senti_dsc"
 const dotenv = require('dotenv').config()
 if (dotenv.error) {
 	console.warn(dotenv.error)
