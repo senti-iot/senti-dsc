@@ -1,4 +1,4 @@
-# Senti Gateway
+# Senti Device Service Callback
 Senti Gateway Service is a Microgateway for the Senti Microservices architecture.
 
 The Microgateway is a gateway for enforcing access to Microservices & APIs. It supports the following core features: 
