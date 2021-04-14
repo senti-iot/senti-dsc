@@ -36,6 +36,8 @@ app.use(cors())
 // API Endpoints
 
 const auth = require('./api/auth/auth')
+const test = require('./api/test/test')
+app.use([test])
 app.use([auth])
 
 
@@ -48,7 +50,7 @@ const startServer = () => {
 	console.clear()
 	printRoutes(app)
 	app.listen(port, () => {
-		console.log('Senti Service started on port', port)
+		console.log('Senti DSC Service started on port', port)
 	}).on('error', (err) => {
 		if (err.errno === 'EADDRINUSE') {
 			console.log('Service not started, port ' + port + ' is busy')
